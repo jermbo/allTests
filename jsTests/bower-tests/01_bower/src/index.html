@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello</title>
+
+
+  <!-- bower:css -->
+  <!-- endbower -->
+
+  <style>
+    @import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Play:700);
+
+    .dot, body {
+      padding: 0
+    }
+
+    .container, .dot {
+      text-align: center
+    }
+
+    .legend a, .loc a {
+      text-decoration: none
+    }
+
+    .gm-style-iw {
+      color: #333;
+      min-width: 250px;
+      min-height: 150px
+    }
+
+    body {
+      margin: 0;
+      background: #333;
+      color: #f3f3f3;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 16px
+    }
+
+    h1, h2 {
+      margin: 0 .625em;
+      font-family: Play, sans-serif
+    }
+
+    h2 {
+      font-size: 1em
+    }
+
+    a {
+      color: white;
+    }
+
+    .container {
+      width: 1000px;
+      margin: 0 auto
+    }
+
+    .map-area {
+      position: relative
+    }
+
+    #map-canvas {
+      width: 100%;
+      height: 500px
+    }
+
+    .dot {
+      width: 20px;
+      height: 25px;
+      border-radius: 100%;
+      display: block;
+      position: absolute;
+      z-index: 100;
+      background: #f3f3f3;
+      font-size: 12px;
+      cursor: pointer
+    }
+
+    .legend {
+      width: 100%;
+      background: #ccc;
+      margin-bottom: 75px
+    }
+
+    .legend a {
+      display: inline-block;
+      padding: 10px;
+      color: #333
+    }
+
+    .legend .dot {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      width: 10px;
+      height: 10px
+    }
+
+    .legend .green {
+      background: #50b948
+    }
+
+    .legend .orange {
+      background: #fbae1f
+    }
+
+    .legend .red {
+      background: #ed1c28
+    }
+
+    .legend .blue {
+      background: #37b9e3
+    }
+
+    .legend .yellow {
+      background: #eddc49
+    }
+
+    .legend .purple {
+      background: #a43d97
+    }
+
+    .legend .dark-blue {
+      background: #033d8c
+    }
+
+    .legend .active, .legend a:hover {
+      background: #e6e6e6
+    }
+
+    .loc, .map-info {
+      padding: 10px;
+      background: #000
+    }
+
+    .map-info {
+      color: #f3f3f3;
+      width: 25%;
+      height: 89.5%;
+      position: absolute;
+      top: 0;
+      right: 0
+    }
+
+    .loc, .locations {
+      position: relative
+    }
+
+    .map-info h2 {
+      margin: 0 auto
+    }
+
+    .locations {
+      height: 92%;
+      overflow-y: scroll
+    }
+
+    .loc {
+      border-bottom: 2px solid #4d4d4d;
+      width: 90%;
+      height: auto;
+      text-align: left
+    }
+
+    .loc h3 {
+      margin: 10px 0;
+      font-size: 1em
+    }
+
+    .loc p {
+      padding: 0;
+      margin: 10px 0;
+      font-size: .8em
+    }
+
+    .loc a {
+      color: #37b9e3;
+      text-transform: uppercase
+    }
+
+    .loc a:hover {
+      font-style: italic
+    }
+
+    .loc.directions {
+      height: 255px
+    }
+
+    .title {
+      text-transform: capitalize;
+      padding: 10px 0
+    }
+
+    .loc:hover, .map-active {
+      background: #4d4d4d
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Advanced Map</h1>
+  <p>This is to show off some features that can be created with a Google Map API</p>
+
+  <div class="map-area">
+    <div id="map-canvas"></div>
+
+    <div class="legend">
+      <!--<a href="#" class="dining"><span class="dot blue"></span> Dining</a>-->
+      <a href="#" class="shopping" data-file="shopping"><span class="dot orange"></span> Shopping</a>
+      <a href="#" class="entertainment" data-file="entertainment"><span class="dot red"></span> Entertainment</a>
+      <!--<a href="#" class="services"><span class="dot green"></span> Services</a>-->
+      <!--<a href="#" class="schools"><span class="dot yellow"></span> Schools</a>-->
+      <!--<a href="#" class="health"><span class="dot purple"></span> Health Care Facilities</a>-->
+      <!--<a href="#" class="government"><span class="dot dark-blue"></span> Government</a>-->
+    </div><!-- /legend -->
+
+    <div class="map-info" >
+      <h2 class="title"></h2>
+      <div id="locations" class="locations"></div><!-- /locations -->
+    </div><!-- /map-info -->
+
+  </div><!-- /map-area -->
+
+</div><!-- /map-area -->
+
+
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+<!-- bower:js -->
+<script src="../bower_components/gmaps/gmaps.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+<script src="../bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js"></script>
+<script src="../bower_components/lodash/lodash.js"></script>
+<!-- endbower -->
+<script src="js/interactiveMap.js"></script>
+<script>
+  $(function () {
+//    console.log('hello world') ;
+//    var dining = [{"name":"Agave Restaurant & Bar","address":"2067 Summer Lee Drive, Rockwall","geolocation":"32.88965,-96.481037","phone":"214.771.0423","website":"www.agaverockwall.com"},{"name":"Alejandro's Grill & Cantina","address":"18000 Dalrock Road, Rowlett","geolocation":"32.928267,-96.517631","phone":"972.412.4370","website":"www.alejandrosgrillandcantina.com"},{"name":"Allure Restaurant at Chandlers Landing","address":"501 Yacht Club Drive, Rockwall","geolocation":"32.878812,-96.485326","phone":"972.771.3600","website":"www.allure-rockwall.com"},{"name":"Applebee's","address":"687 East Interstate 3, Rockwall","geolocation":"32.865692,-96.537488","phone":"972.772.5227","website":"www.applebees.com"},{"name":"Arboleda's Mexican Restaurant","address":"213 Hubbard Drive, Rockwall","geolocation":"32.834556,-96.477021","phone":"972.722.7805","website":""},{"name":"Bamboo Asian Cuisine","address":"2927 Ridge Road, Rockwall","geolocation":"32.889514,-96.470165","phone":"972.722.8088","website":"www.bambooasianrockwall.com"},{"name":"Bin 303","address":"105 Olive Street, Rockwall","geolocation":"32.932947,-96.460223","phone":"972.771.5303","website":"www.bin303.com"},{"name":"Black Eyed Pea","address":"2861 Ridge Road, #101, Rockwall","geolocation":"32.892438,-96.47065","phone":"972.772.9388","website":"www.theblackeyedpea.com"},{"name":"Buffalo Wild Wings","address":"951 Interstate 30, Frontage Road, #101, Rockwall","geolocation":"32.902617,-96.454762","phone":"972.722.5100","website":"www.buffalowildwings.com"},{"name":"Campisis","address":"2115 South Summer Lee Drive, Rockwall","geolocation":"32.890743,-96.480251","phone":"469.402.2603","website":"www.campisis.us"},{"name":"Carl's Jr.","address":"1990 East 130, Rockwall","geolocation":"32.932154,-96.418046","phone":"972.722.3068","website":"www.carlsjr.com"},{"name":"Chili's Grill & Bar","address":"685 Interstate 30, Frontage Road, Rockwall","geolocation":"32.916194,-96.431047","phone":"972.722.3888","website":"www.chilis.com"},{"name":"Cold Stone Creamery","address":"2115 Summer Lee Drive, #101, Rockwall","geolocation":"32.890743,-96.480251","phone":"972.722.2589","website":"www.coldstonecreamery.com"},{"name":"Cotton Patch Café","address":"909 East I-30, Rockwall","geolocation":"32.901535,-96.455931","phone":"214.771.0372","website":"www.cottonpatch.com"},{"name":"Culpepper Steakhouse","address":"309 East Interstate 30, Rockwall","geolocation":"32.893841,-96.478581","phone":"972.771.1001","website":"www.culpeppersteakhouse.com"},{"name":"Culver's","address":"2475 Ridge Road, Rockwall","geolocation":"32.900381,-96.467182","phone":"972.722.6586","website":"www.culvers.com"},{"name":"D's BBQ","address":"2975 Texas 66, Rockwall","geolocation":"32.936481,-96.441093","phone":"972.722.5636","website":""},{"name":"Dodie's Cajun Restaurant","address":"2067 Summer Lee Drive, Rockwall","geolocation":"32.88965,-96.481037","phone":"972.771.0004","website":"www.dodiesrockwall.com"},{"name":"Edo Japan","address":"1067 Interstate 30, Rockwall","geolocation":"32.906507,-96.451318","phone":"972.722.2555","website":""},{"name":"Edohana Japanese Restaurant","address":"716 Interstate 30, Rockwall","geolocation":"32.927074,-96.390715","phone":"972.722.4664","website":"www.rockwalledohana.com"},{"name":"El Potrillo de la Sandia","address":"2101 Summer Lee Drive, #105, Rockwall","geolocation":"32.890355,-96.480851","phone":"972.722.5100","website":"www.restaurantelpotrillo.com"},{"name":"Firehouse Subs","address":"1067 interstate 30, #107, Rockwall","geolocation":"32.906507,-96.451318","phone":"972.722.3473","website":"www.firehousesubs.com"},{"name":"Five Guys Burgers And Fries","address":"1035 Interstate 30, Rockwall","geolocation":"32.905351,-96.452237","phone":"972.722.0957","website":"www.fiveguys.com"},{"name":"Gloria's Restaurant","address":"2079 Summer Lee Drive, Rockwall","geolocation":"32.890578,-96.481177","phone":"972.722.4088","website":"www.gloriasrestaurants.com"},{"name":"In And Out Burger","address":"1106 Interstate 30, Frontage Road, Rockwall","geolocation":"32.909398,-96.448484","phone":"800.786.1000","website":"www.in-n-out.com"},{"name":"Joe Willy's","address":"2006 South Goliad Street, Rockwall","geolocation":"32.90994,-96.452384","phone":"972.722.9432","website":"www.joewillys.com"},{"name":"Johnny Carino's","address":"819 East IE-30, Rockwall","geolocation":"32.899225,-96.46013","phone":"972.722.9233","website":"www.carinos.com"},{"name":"Koung Thai Restaurant","address":"2006 South Goliad Street, #218, Rockwall","geolocation":"32.90994,-96.452384","phone":"972.722.1761","website":"www.koungthairestaurant.com"},{"name":"Kyoto Japanese Steak House","address":"1599 Laguna Drive, Rockwall","geolocation":"32.897304,-96.47417","phone":"214.771.0688","website":"www.kyotosteakhouse.com"},{"name":"La Madeleine Country French Café","address":"987 Interstate 30, Garland","geolocation":"32.856069,-96.557035","phone":"972.722.6650","website":"www.lamadeleine.com"},{"name":"Logan's Roadhouse","address":"560 East I-3, Rockwall","geolocation":"32.594498,-96.752976","phone":"972.722.3550","website":"www.logansroadhouse.com"},{"name":"Luigi's Italian Café","address":"2002 South Goliad Street, Rockwall","geolocation":"32.911687,-96.452567","phone":"972.722.0233","website":"www.luigisitaliancafe.com"},{"name":"Luna De Noche Harbor","address":"2095 Summer Lee Drive, # 105, Rockwall","geolocation":"32.890181,-96.479458","phone":"972.772.8100","website":"www.lunadenochetexmex.com"},{"name":"Macks BBQ","address":"101 East Fate Main Place, Fate","geolocation":"32.941488,-96.381308","phone":"972.722.4343","website":"www.rockwallbbq.com"},{"name":"Milanos Restaurant","address":"201 Laurence Drive, #104, Heath","geolocation":"32.837158,-96.475286","phone":"972.961.4402","website":"www.milanospizzainheath.com"},{"name":"Mistra Restaurant at Hilton Lakefront","address":"2055 Summer Lee Drive, Rockwall","geolocation":"32.888103,-96.481057","phone":"214.771.3700","website":"http://www.opentable.com/hilton-dallas-rockwall-lakefront-mistra"},{"name":"Olive Garden","address":"1043 East IH-30, Rockwall","geolocation":"32.931234,-96.459709","phone":"972.722.0425","website":"www.olivegarden.com"},{"name":"Pizza Cucina","address":"1209 Ridge Road, Rockwall","geolocation":"32.915814,-96.459819","phone":"972.722.6969","website":"www.pizzacucinatx.com"},{"name":"Route 66 Classic Diner","address":"206 West Rusk Street, Rockwall","geolocation":"32.931061,-96.461569","phone":"972.722.1958","website":""},{"name":"Ruby Tuesday","address":"2075 Summer Lee Drive","geolocation":"32.890748,-96.481216","phone":"972.772.3165","website":"www.rubytuesday.com"},{"name":"Saltgrass Steak House","address":"1649 Laguna Drive, Rockwall","geolocation":"32.896964,-96.474674","phone":"972.771.4999","website":"www.saltgrass.com"},{"name":"Samee's Pizza Getti Italian Bistro & Lounge","address":"561 East Interstate 30, Rockwall","geolocation":"32.894181,-96.472073","phone":"972.722.5835","website":"www.sameespizzagetti.webs.com"},{"name":"Schlotzsky's","address":"706 interstate 30, Frontage Road, Rockwall","geolocation":"32.916194,-96.431047","phone":"972.722.7900","website":"www.schlotzskys.com"},{"name":"Snuffer's Restaurant & Bar","address":"2901 Village Drive, Rockwall","geolocation":"32.896035,-96.477059","phone":"972.722.9811","website":"www.snuffers.com"},{"name":"Southern Junction Nightclub and Steakhouse","address":"5574 Texas 276, Royse City","geolocation":"32.901351,-96.365005","phone":"972.771.2418","website":"www.southernjunctionlive.com"},{"name":"Starbucks Coffee Shop","address":"1699 Laguna Drive, Rockwall","geolocation":"32.896564,-96.475551","phone":"214.771.0303","website":"www.starbucks.com"},{"name":"Tatianos Italian Restaurant","address":"9401 Lakeview Parkway, Rowlett","geolocation":"32.921323,-96.510104","phone":"972.475.6599","website":"www.tatianos.net"},{"name":"The Candy Jar Malt Shop","address":"109 South Goliad Street, Rockwall","geolocation":"32.930654,-96.460071","phone":"972.722.6258","website":"www.thecandyjarmaltshop.com"},{"name":"The Fatted Calf","address":"112 East Rusk Street, Rockwall","geolocation":"32.93068,-96.459867","phone":"972.722.3343","website":"www.thefattedcalfrestaurant.com"},{"name":"The Feed Store-Cole Mountain","address":"1407 South Goliad Street, Rockwall","geolocation":"32.915136,-96.454016","phone":"972.771.7325","website":"www.colemountain.com"},{"name":"The Life House","address":"506 North Goliad Street, Rockwall","geolocation":"32.934273,-96.459879","phone":"469.264.7962","website":"www.thelifehousetx.com"},{"name":"Trevino's","address":"101 North Goliad Street, Rockwall","geolocation":"32.931159,-96.460588","phone":"972.771.1406","website":"www.ltrevinos.com"},{"name":"Villas Grill Rockwall","address":"2332 Greencrest Boulevard, Rockwall","geolocation":"32.901675,-96.459078","phone":"972.722.8222","website":"www.villasgrill.net"},{"name":"Weekends Bar & Grill","address":"600 Cooke Drive, #300, Rowlett","geolocation":"32.872739,-96.515236","phone":"972.475.6438","website":""},{"name":"Yummys Restaurant","address":"9480 County Road 2470, Royse City","geolocation":"32.88413,-96.296659","phone":"972.636.3161","website":""},{"name":"Z's Catfish","address":"127 Kenway Street, Rockwall","geolocation":"32.926111,-96.461376","phone":"972.722.2226","website":"https://www.facebook.com/zcatfish"},{"name":"Zanata","address":"202 East Rusk Street, Rockwall","geolocation":"32.930856,-96.459303","phone":"972.722.2822","website":"www.zanatas.com"}];
+//    var map = new GMaps({
+//      div: '#map',
+//      lat: 32.936474,
+//      lng: -96.394248,
+//      zoom: 12,
+//      styles : [{"featureType":"water","stylers":[{"color":"#4eab9a"}]},{"featureType":"landscape","stylers":[{"color":"#fef4d0"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#e0d6b5"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#e99d47"},{"visibility":"simplified"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]}]
+//    });
+//    var allMarkers = [];
+//
+//    for( var i = 0; i < dining.length; i++ ){
+//      var geoSplit = dining[i].geolocation.split(',');
+//      var desc = '<h3>' + dining[i].name + '</h3>';
+//      var singleMarker =  map.addMarker({
+//        lat: geoSplit[0],
+//        lng: geoSplit[1],
+//        title: dining[i].name,
+//        click: function(e) {
+//          console.log('You clicked in this marker : ' + i);
+//        },
+//        infoWindow: {
+//          content: desc
+//        }
+//      });
+//      allMarkers.push(singleMarker);
+//    }
+
+//    var delMark = setInterval(function(){
+//      removeMarkers();
+//    }, 750);
+//
+//    var markerIndex = 0;
+//    function removeMarkers(){
+//      console.log('removed triggered');
+//      if (markerIndex != dining.length ){
+//        map.removeMarker(allMarkers[markerIndex]);
+//        markerIndex++;
+//      }else{
+//        clearInterval( delMark );
+//        console.log('all done');
+//      }
+//    }
+
+    interactiveMap.makeMap({
+      map: {
+        div: '#map-canvas'
+      },
+      directoryDiv: '#locations'
+    });
+
+    $('.legend a').on('click', function (e) {
+      e.preventDefault();
+
+      var $this = $(this);
+      if (!$this.hasClass('active')) {
+        $('.legend a').removeClass('active');
+        $this.addClass('active');
+        interactiveMap.removeMarkers();
+        interactiveMap.addMarkers('../json/' + $this.attr('data-file') + '.json');
+      } else {
+        $this.removeClass('active');
+        interactiveMap.removeMarkers();
+      }
+
+    });
+
+
+//    var map = new GMaps({
+//      div: '#map-canvas',
+//      lat: 25.798305,
+//      lng: -80.185966,
+//      zoom: 12,
+//      styles : [{"featureType":"water","stylers":[{"color":"#4eab9a"}]},{"featureType":"landscape","stylers":[{"color":"#fef4d0"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#e0d6b5"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#e99d47"},{"visibility":"simplified"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]}]
+//    });
+//
+//    var $legendBtns = $( '.legend a' ),
+//      $locTitle = $( '.title' ),
+//      $locationArea = $( '.locations' ),
+//      isOpen = false,
+//      file,
+//      iterator = 0,
+//      mapMarkers = [],
+//      currentInfo = []
+//      ;
+//
+//    function init(){
+//      addLegendClick();
+//    }
+//
+//    function addLegendClick() {
+//      $legendBtns.on('click', function (e) {
+//        e.preventDefault();
+//        var $this = $(this);
+//
+//        if( !$this.hasClass('active')){
+//          $legendBtns.removeClass('active');
+//
+//          file = $this.attr('class');
+//          $locTitle.html( file );
+//          $this.addClass('active');
+//
+//          if (currentInfo !== 0) deleteMarkers();
+//          loadFile();
+//          if (!isOpen) openCloseInfoBar();
+//        }else{
+//          $this.removeClass('active');
+//          deleteMarkers();
+//          openCloseInfoBar();
+//        }
+//
+//      });
+//    }
+//
+//
+//    var mapAdjustTL = new TimelineMax( {paused : true} );
+//    mapAdjustTL.to( '#map-canvas', 1, {width : '73%', ease : Back.easeOut}, 'start' )
+//      .from( '.map-info', 1, {width : 0, autoAlpha : 0, ease : Back.easeOut}, 'start' );
+//
+//    function openCloseInfoBar(){
+//      ( isOpen ) ? mapAdjustTL.reverse().timeScale( 4 ) : mapAdjustTL.play().timeScale( 2 );
+//      isOpen = !isOpen;
+//      //resetMap();
+//    }
+//
+//    function loadFile(){
+//      var path = '../json/' + file + '.json';
+//      console.log(path);
+//      $.ajax( {
+//        url: path,
+//        dataType: 'json',
+//        type: 'GET',
+//        beforeSend : function (){
+//        }
+//      } ).done( function ( data ){
+//        console.log('done');
+//        for ( var i in data ){
+//          currentInfo.push( {
+//            'name'        : data[i].name,
+//            'address'     : data[i].address,
+//            'phone'       : data[i].phone,
+//            'website'     : data[i].website,
+//            'geoLocation' : data[i].geolocation
+//          } );
+//        }
+//
+//
+//        for ( var j = 0; j < currentInfo.length; j++ ){
+//          addMarker(currentInfo[j]);
+//        }
+//
+//      }).fail(function(e){
+//        console.log('error');
+//        console.log(e);
+//      });
+//    }
+//
+//    var allMarkers = [];
+//
+//    function addMarker(marker){
+//      var geoSplit = data[i].geoLocation.split(',');
+//      var desc = '<h3>' + data[i].name + '</h3>';
+//      desc += '<p>Address : ' + data[i].address + '</p>';
+//      desc += ( data[i].phone != '') ? '<p>Phone : ' + data[i].phone + '</p>' : '';
+//      desc += ( data[i].website != '' ) ? '<p>Website : <a href="http://' + data[i].website + '" target="_blank">View Website</a></p>' : '';
+//      var singleMarker =  map.addMarker({
+//        lat: geoSplit[0],
+//        lng: geoSplit[1],
+//        title: data[i].name,
+//        click: function(e) {
+//
+//        },
+//        infoWindow: {
+//          content: desc
+//        }
+//      });
+//      allMarkers.push(singleMarker);
+//      addSingleInfo(desc);
+//    }
+//
+//    function addSingleInfo(desc){
+//      var newDesc = '<div class="loc" id="' + iterator + '">';
+//      newDesc += desc;
+//      newDesc += '</div>';
+//      $locationArea.append( newDesc );
+//
+//      var id = $( '#' + iterator ),
+//        topping = id.offset().top;
+//
+//      id.attr( 'data-scroll-top', topping );
+//    }
+//
+//    function deleteMarkers(){
+//      map.removeMarkers();
+//      $locationArea.children( '.loc' ).remove();
+//      allMarkers = [];
+//    }
+//
+//
+//    init();
+  });
+</script>
+</body>
+</html>

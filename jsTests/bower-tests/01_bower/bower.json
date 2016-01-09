@@ -1,0 +1,25 @@
+{
+  "name": "01_bower",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "jermbo <jermbo@jermbo.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gmaps": "~0.4.22",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6",
+    "gsap": "~1.18.2",
+    "lodash": "~3.10.1"
+  }
+}

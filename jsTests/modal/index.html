@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.1/TweenMax.min.js"></script>
+  <style>
+    html,
+    body{
+      overflow: hidden;
+      width:100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .clickMe {
+      background: coral;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-transition: all .13s ease-out;
+      transition: all .13s ease-out;
+    }
+
+    .clickMe:hover {
+      color: coral;
+      background: #ffdcd0;
+    }
+
+    .doc{
+      padding:10px;
+      background: #fff;
+      box-shadow: 0 0 5px 2px #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .overlay{
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+<a href="#" class="clickMe">Open Modal</a>
+
+
+<script src="modal.js"></script>
+<script>
+
+  $('.clickMe').on('click', function (e) {
+    e.preventDefault();
+
+    new Modal({
+      className : 'customClass',
+      content: 'A new modal instance',
+      tweenType: 'fromBottom',
+      tweenTime : 0.75,
+      callback: function() {
+        console.log('something')  ;
+      }
+    }).open();
+
+
+
+  });
+</script>
+</body>
+</html>

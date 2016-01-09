@@ -1,0 +1,410 @@
+[
+  {
+    "name": "Margaret Pace Park",
+    "address": "1745 N Bayshore Dr Miami, FL 33132",
+    "geolocation": "25.79298,-80.185958",
+    "phone": "(305) 860-3823",
+    "community": "Edgewater",
+    "website": "www.miamidade.gov/parks"
+  },
+  {
+    "name": "YoungArts Miami",
+    "address": "2100 Biscayne Boulevard Miami, FL 33137",
+    "geolocation": "25.797441,-80.189364",
+    "phone": "(305) 377-1140 ",
+    "community": "Edgewater",
+    "website": "http://www.youngarts.org/miami"
+  },
+  {
+    "name": "Ziff Ballet Opera House",
+    "address": "1300 Biscayne Blvd, Miami, FL 33132",
+    "geolocation": "25.787684,-80.188633",
+    "phone": "(305) 949-6722",
+    "community": "Edgewater",
+    "website": "http://www.arshtcenter.org/About-Us/Rentals/Sanford-and-Dolores-Ziff-Ballet-Opera-House/"
+  },
+  {
+    "name": "Adrienne Arsht Center for the Performing Arts",
+    "address": "1300 Biscayne Blvd. Miami, FL 33132",
+    "geolocation": "25.787684,-80.188633",
+    "phone": "(305) 949-6722",
+    "community": "Edgewater",
+    "website": "http://www.arshtcenter.org"
+  },
+  {
+    "name": "Nina Torres Fine Art",
+    "address": "1800 N Bayshore Dr, Miami, FL 33132",
+    "geolocation": "25.79414,-80.187094",
+    "phone": "(305) 395-3599",
+    "community": "Edgewater",
+    "website": "www.ninatorresfineart.com/"
+  },
+  {
+    "name": "Miami Farmer's Market",
+    "address": "1300 Biscayne Blvd Miami, Florida 33132 ",
+    "geolocation": "25.787684,-80.188633",
+    "phone": "(305) 949-6722",
+    "community": "Edgewater",
+    "website": "http://www.arshtcenter.org/Visit/Farmers-Market/"
+  },
+  {
+    "name": "Wynwood Walls",
+    "address": "2516 NW 2nd Ave, Miami, FL 33127",
+    "geolocation": "25.801021,-80.199288",
+    "phone": "(305) 531-4411",
+    "community": "Wynwood",
+    "website": "http://thewynwoodwalls.com"
+  },
+  {
+    "name": "O Cinema Wynwood",
+    "address": "90 NW 29th St, Miami, FL 33127",
+    "geolocation": "25.803622,-80.196885",
+    "phone": "(305) 571-9970",
+    "community": "Wynwood",
+    "website": "o-cinema.org"
+  },
+  {
+    "name": "Wynwood Art Walk Tours",
+    "address": "2219 NW 2nd Ave, Miami, FL 33127",
+    "geolocation": "25.798426,-80.198781",
+    "phone": "(305) 814-9290",
+    "community": "Wynwood",
+    "website": "wynwoodartwalk.com"
+  },
+  {
+    "name": "Rubell Family Collection/Contemporary Arts ",
+    "address": "95 NW 29th St. Miami, FL 33127",
+    "geolocation": "25.804222,-80.196983",
+    "phone": "(305) 573-6090",
+    "community": "Wynwood",
+    "website": "http://www.rfc.museum"
+  },
+  {
+    "name": "Museum of Fashion",
+    "address": "2612 NW 2nd Ave, Miami FL 33127",
+    "geolocation": "25.80178,-80.199229",
+    "phone": "",
+    "community": "Wynwood",
+    "website": "themuseumoffashion.org"
+  },
+  {
+    "name": "Miami Light Project",
+    "address": "404 NW 26th St. Miami, FL 33127",
+    "geolocation": "25.801219,-80.202472",
+    "phone": "(305) 576-4350",
+    "community": "Wynwood",
+    "website": "http://www.miamilightproject.com"
+  },
+  {
+    "name": "Margulies Collection at the Warehouse ",
+    "address": "591 NW 27th St. Miami, FL 33127",
+    "geolocation": "25.802187,-80.204914",
+    "phone": "(305) 576-1051",
+    "community": "Wynwood",
+    "website": "http://www.margulieswarehouse.com"
+  },
+  {
+    "name": "Mijares Art LLC",
+    "address": "700 NE 25TH ST. Miami, FL 33137",
+    "geolocation": "25.800767,-80.185766",
+    "phone": "(786) 390-8566",
+    "community": "Wynwood",
+    "website": "http://www.mijares.com"
+  },
+  {
+    "name": "Gary Nader Art Centre",
+    "address": "62 NE 27th St, Miami, FL 33137",
+    "geolocation": "25.802173,-80.193479",
+    "phone": "(305) 576-0256",
+    "community": "Wynwood",
+    "website": "www.garynader.com"
+  },
+  {
+    "name": "Waltman Ortega Fine Art",
+    "address": "2233 NW 2nd Ave, Miami, FL 33127",
+    "geolocation": "25.798703,-80.198784",
+    "phone": "(305) 576-5335",
+    "community": "Wynwood",
+    "website": "http://www.waltmanortega.com"
+  },
+  {
+    "name": "Art Fushion Galleries",
+    "address": "3550 N Miami Ave, Miami, FL 33127",
+    "geolocation": "25.810236,-80.195647",
+    "phone": "(305) 573-5730",
+    "community": "Wynwood",
+    "website": "www.artfusiongalleries.com/"
+  },
+  {
+    "name": "Dina Mitrani Gallery",
+    "address": "2620 NW 2nd Avenue, Miami, Fl 33127",
+    "geolocation": "25.801872,-80.199221",
+    "phone": "(786) 486-7248",
+    "community": "Wynwood",
+    "website": "http://www.dinamitranigallery.com"
+  },
+  {
+    "name": "Fredric Snitzer Gallery",
+    "address": "1540 NE Miami Ct, Miami, FL 33132",
+    "geolocation": "25.790206,-80.194065",
+    "phone": "(305) 448-8976",
+    "community": "Wynwood",
+    "website": "www.snitzer.com/"
+  },
+  {
+    "name": "Moonlit Movies",
+    "address": "3401 North Miami Avenue, Miami, FL 33127",
+    "geolocation": "25.809352,-80.194191",
+    "phone": "(877) 225-5337",
+    "community": "Midtown",
+    "website": "midtownmiamishops.com/"
+  },
+  {
+    "name": "Bass Museum of Art",
+    "address": "2100 Collins Ave, Miami Beach, FL 33139",
+    "geolocation": "25.796278,-80.129144",
+    "phone": "(305) 673-7530",
+    "community": "The Beaches",
+    "website": "https://www.bassmuseum.org"
+  },
+  {
+    "name": "New World Symphony",
+    "address": "500 17th St. Miami Beach, FL 33139",
+    "geolocation": "25.790957,-80.132598",
+    "phone": "(305) 673-3331",
+    "community": "The Beaches",
+    "website": "http://www.nws.edu"
+  },
+  {
+    "name": "The Fillmore Miami Beach",
+    "address": "1700 Washington Ave, Miami Beach, FL 33139",
+    "geolocation": "25.792917,-80.13314",
+    "phone": "(305) 673-7300",
+    "community": "The Beaches",
+    "website": "http://www.fillmoremb.com"
+  },
+  {
+    "name": "Colony Theatre",
+    "address": "1040 Lincoln Road Miami Beach, FL 33139",
+    "geolocation": "25.790159,-80.139436",
+    "phone": "(305) 674-1040",
+    "community": "The Beaches",
+    "website": "http://www.colonytheatremiamibeach.com"
+  },
+  {
+    "name": "Miami Beach Convention Center",
+    "address": "1901 Convention Center Dr, Miami Beach, FL 33139",
+    "geolocation": "25.794993,-80.133486",
+    "phone": "(305) 673-7311",
+    "community": "The Beaches",
+    "website": "www.miamibeachconvention.com/"
+  },
+  {
+    "name": "Jewish Museum of Florida",
+    "address": "301 Washington Ave, Miami Beach, FL 33139",
+    "geolocation": "25.772533,-80.13432",
+    "phone": "(305) 672-5044",
+    "community": "The Beaches",
+    "website": "jmof.fiu.edu/"
+  },
+  {
+    "name": "Miami Beach Botanical Garden",
+    "address": "2000 Convention Center Dr, Miami Beach, FL 33139",
+    "geolocation": "25.79581,-80.135967",
+    "phone": "(305) 673-7256",
+    "community": "The Beaches",
+    "website": "www.mbgarden.org/"
+  },
+  {
+    "name": "Jungle Island",
+    "address": "1111 Parrot Jungle Trail, Miami, FL 33132",
+    "geolocation": "25.786195,-80.175097",
+    "phone": "(305) 400-7000",
+    "community": "The Beaches",
+    "website": "https://www.jungleisland.com/"
+  },
+  {
+    "name": "Miami Children's Museum",
+    "address": "980 MacArthur Cswy. Miami, FL 33132",
+    "geolocation": "25.784709,-80.176413",
+    "phone": "(305) 373-5437",
+    "community": "The Beaches",
+    "website": "miamichildrensmuseum.org"
+  },
+  {
+    "name": "David Castillo Gallery",
+    "address": "420 Lincoln Road Miami Beach, Florida 33139",
+    "geolocation": "25.790295,-80.132306",
+    "phone": "(305) 573-8110",
+    "community": "The Beaches",
+    "website": "http://www.davidcastillogallery.com"
+  },
+  {
+    "name": "South Pointe Park",
+    "address": "1 Washington Ave, Miami Beach, FL 33139",
+    "geolocation": "25.765903,-80.13394",
+    "phone": "(305) 673-7779",
+    "community": "The Beaches",
+    "website": ""
+  },
+  {
+    "name": "Edge Theatre",
+    "address": "4141 NE 2ND AVE.  MIAMI 33127",
+    "geolocation": "25.814722,-80.19956",
+    "phone": "(786) 355-0976",
+    "community": "Design District",
+    "website": "www.miami.com/edge-theatre"
+  },
+  {
+    "name": "Institute of Contemporary Art",
+    "address": "4040 NE 2nd Ave. Miami, Florida 33137",
+    "geolocation": "25.814054,-80.191764",
+    "phone": "(305) 901-5272",
+    "community": "Design District",
+    "website": "http://www.icamiami.org"
+  },
+  {
+    "name": "Bossa Gallery",
+    "address": "4141 NE 2ND AVE. Suite 107 Miami, Florida 33137",
+    "geolocation": "25.814238,-80.19126",
+    "phone": "(305) 603-8233",
+    "community": "Design District",
+    "website": "http://www.bossagallery.com"
+  },
+  {
+    "name": "Opera Gallery",
+    "address": "30 NE 39 Street Miami, Florida 33137",
+    "geolocation": "25.812679,-80.194691",
+    "phone": "305-868-3337",
+    "community": "Design District",
+    "website": "www.operagallery.com"
+  },
+  {
+    "name": "Markowicz Fine Art",
+    "address": "110 NE 40th St, Miami, FL 33137",
+    "geolocation": "25.813411,-80.193204",
+    "phone": "(305) 308-6398",
+    "community": "Design District",
+    "website": "http://www.markowiczfineart.com"
+  },
+  {
+    "name": "Maman Fine Art",
+    "address": "3930 NE 2nd Ave #204, Miami, FL 33137",
+    "geolocation": "25.812964,-80.191661",
+    "phone": "(305) 571-3522",
+    "community": "Design District",
+    "website": "mamanfineart.com/"
+  },
+  {
+    "name": "FAAM, LLC. Fine Art Auctions Miami",
+    "address": "350 NW 29th St, Miami, FL 33127",
+    "geolocation": "25.803536,-80.202683",
+    "phone": "(305) 573-4228",
+    "community": "Design District",
+    "website": "faamiami.com/"
+  },
+  {
+    "name": "Etra Fine Art",
+    "address": "2315 NW 2nd Ave, Miami, FL 33127",
+    "geolocation": "25.799433,-80.198744",
+    "phone": "(305) 438-4383",
+    "community": "Design District",
+    "website": "www.etrafineart.com/"
+  },
+  {
+    "name": "Locust Projects ",
+    "address": "3852 North Miami Avenue, Miami Fl 33127",
+    "geolocation": "25.812375,-80.195659",
+    "phone": "305.576.8570",
+    "community": "Design District",
+    "website": "http://www.locustprojects.org/about/"
+  },
+  {
+    "name": "de la Cruz Collection Contemporary Art Space",
+    "address": "23 NE 41st Street, Miami, Fl 33137",
+    "geolocation": "25.814331,-80.195005",
+    "phone": "(305) 576-6112",
+    "community": "Design District",
+    "website": "www.delacruzcollection.org"
+  },
+  {
+    "name": "The Stage Miami",
+    "address": "170 NE 38th St. Miami, Florida 33137",
+    "geolocation": "25.811702,-80.191862",
+    "phone": "(305) 576-9577",
+    "community": "Design District",
+    "website": "www.thestagemiami.com"
+  },
+  {
+    "name": "American Airlines Arena",
+    "address": "601 Biscayne Blvd. Miami, FL 33132",
+    "geolocation": "25.78135,-80.187441",
+    "phone": "(786) 777-1000",
+    "community": "Downtown Miami",
+    "website": "http://www.aaarena.com"
+  },
+  {
+    "name": "Pérez Art Museum Miami (PAMM)",
+    "address": "1103 Biscayne Blvd. Miami, FL 33132",
+    "geolocation": "25.786034,-80.186325",
+    "phone": "(305) 375-3000",
+    "community": "Downtown Miami",
+    "website": "http://www.pamm.org"
+  },
+  {
+    "name": "Patricia and Phillip Frost Museum of Science",
+    "address": "1101 Biscayne Blvd. Miami, FL 33132",
+    "geolocation": "25.784887,-80.189178",
+    "phone": "(305) 646-4200",
+    "community": "Downtown Miami",
+    "website": "miamisci.org"
+  },
+  {
+    "name": "Bayfront Park",
+    "address": "301 Biscayne Blvd, Miami, FL 33132",
+    "geolocation": "25.777429,-80.187883",
+    "phone": "(305) 358-7550",
+    "community": "Downtown Miami",
+    "website": "http://www.bayfrontparkmiami.com"
+  },
+  {
+    "name": "Freedom Tower",
+    "address": "600 Biscayne Blvd, Miami, FL 33132",
+    "geolocation": "25.780273,-80.189669",
+    "phone": "(305) 237-8888",
+    "community": "Downtown Miami",
+    "website": ""
+  },
+  {
+    "name": "HistoryMiami",
+    "address": "101 W Flagler St, Miami, FL 33130",
+    "geolocation": "25.774627,-80.196406",
+    "phone": "(305) 375-1492",
+    "community": "Downtown Miami",
+    "website": "www.historymiami.org/"
+  },
+  {
+    "name": "James L. Knight Center",
+    "address": "400 SE 2ND AVE. Miami, FL 33131",
+    "geolocation": "25.770928,-80.190901",
+    "phone": "(305) 416-5970",
+    "community": "Downtown Miami",
+    "website": "http://www.jlkc.com"
+  },
+  {
+    "name": "MDC Museum of Art + Design",
+    "address": "600 Biscayne Blvd. Miami, FL 33132",
+    "geolocation": "25.780273,-80.189669",
+    "phone": "(305) 237-7700",
+    "community": "Downtown Miami",
+    "website": "http://www.mdcmoad.org"
+  },
+  {
+    "name": "Olympia Theater At The Gusman Center For The Performing Arts",
+    "address": "174 E. Flagler St. Miami, FL 33131",
+    "geolocation": "25.773836,-80.190477",
+    "phone": "(305) 374-2444",
+    "community": "Downtown Miami",
+    "website": "http://www.olympiatheater.org"
+  }
+]

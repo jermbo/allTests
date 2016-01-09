@@ -1,0 +1,195 @@
+[
+  {
+    "name": "Caveat",
+    "address": "448 NW 28th St., Miami, FL 33127",
+    "geolocation": "25.802601,-80.20254",
+    "phone": "(305) 501-4646",
+    "community": "Wynwood",
+    "website": "http://caveatmiami.com"
+  },
+  {
+    "name": "Elemental",
+    "address": "2399 NW 2nd Ave Miami, FL 33127",
+    "geolocation": "25.799578,-80.198831",
+    "phone": "(786) 576-5955",
+    "community": "Wynwood",
+    "desc" : "",
+    "website": "http://www.elementalstore.com"
+  },
+  {
+    "name": "The Shops at Midtown Miami",
+    "address": "3401 North Miami Ave. Miami, FL 33127",
+    "geolocation": "25.809352,-80.194191",
+    "phone": "(877) 225-5337",
+    "community": "Midtown",
+    "website": "midtownmiamishops.com/"
+  },
+  {
+    "name": "The Shops at Mary Brickell Village",
+    "address": "901 South Miami Ave. Miami, FL 33130",
+    "geolocation": "25.765004,-80.193761",
+    "phone": "(305) 381-6130",
+    "community": "Brickell",
+    "website": "www.marybrickellvillage.com/"
+  },
+  {
+    "name": "Collins Avenue Shopping District",
+    "address": "Collins Avenue & Ocean Drive, Between 5th & 10th Streets Miami Beach, FL 33139",
+    "geolocation": "25.780621,-80.13737",
+    "phone": "(305) 672-1270",
+    "community": "The Beaches",
+    "website": "http://www.shoponmiamibeach.com"
+  },
+  {
+    "name": "Lincoln Road Mall",
+    "address": "Lincoln Rd. Mall Miami Beach, FL 33139",
+    "geolocation": "25.7905,-80.136578",
+    "phone": "(305) 531-3442",
+    "community": "The Beaches",
+    "website": "http://lincolnroadmall.com"
+  },
+  {
+    "name": "Bal Harbour Shops",
+    "address": "9700 Collins Ave, Bal Harbour, FL 33154",
+    "geolocation": "25.88856,-80.12474",
+    "phone": "(305) 866-0311",
+    "community": "The Beaches",
+    "website": "http://www.balharbourshops.com"
+  },
+  {
+    "name": "BVLGARI",
+    "address": "140 NE 39th Street Suite 127 Miami, Florida 33137",
+    "geolocation": "25.812218,-80.19258",
+    "phone": "(305) 576-6506",
+    "community": "Design District",
+    "website": "www.bulgari.com"
+  },
+  {
+    "name": "Cartier",
+    "address": "147 NE 39th Street Miami, Florida 33137",
+    "geolocation": "25.81279,-80.192358",
+    "phone": "(305) 864-8793",
+    "community": "Design District",
+    "website": "www.cartier.us"
+  },
+  {
+    "name": "Céline",
+    "address": "191 NE 40th Street Space 101 Miami, Florida 33137",
+    "geolocation": "25.813719,-80.191755",
+    "phone": "(305) 866-1888",
+    "community": "Design District",
+    "website": "https://www.celine.com/en"
+  },
+  {
+    "name": "Christian Loubiton",
+    "address": "161 NE 40th Street Suite 104 Miami, Florida 33137",
+    "geolocation": "25.813597,-80.19224",
+    "phone": "(305) 576-6820",
+    "community": "Design District",
+    "website": "us.christianlouboutin.com/us_en/"
+  },
+  {
+    "name": "Givenchy",
+    "address": "102 NE 39th Street Miami, Florida 33137",
+    "geolocation": "25.812721,-80.193348",
+    "phone": "(305) 576-6250",
+    "community": "Design District",
+    "website": "www.givenchy.com"
+  },
+  {
+    "name": "Harry Winston",
+    "address": "166 NE 39th Miami, Florida 33137",
+    "geolocation": "25.81277,-80.19211",
+    "phone": "(786) 275-3660",
+    "community": "Design District",
+    "website": "www.harrywinston.com"
+  },
+  {
+    "name": "Hermés",
+    "address": "175 NE 40th Street Miami, Florida 33137",
+    "geolocation": "25.813696,-80.191996",
+    "phone": "(305) 868-0118",
+    "community": "Design District",
+    "website": "usa.hermes.com/"
+  },
+  {
+    "name": "Long Champ",
+    "address": "137 NE 39th St Miami, Florida 33137",
+    "geolocation": "25.812782,-80.192585",
+    "phone": "(305) 573-7500",
+    "community": "Design District",
+    "website": "us.longchamp.com"
+  },
+  {
+    "name": "Louis Vuitton",
+    "address": "140 NE 39th Street Miami, Florida 33137",
+    "geolocation": "25.812218,-80.19258",
+    "phone": "(305) 573-1366",
+    "community": "Design District",
+    "website": "www.louisvuitton.com"
+  },
+  {
+    "name": "Piaget",
+    "address": "140 NE 39th Street Suite 105 Miami, Florida 33137",
+    "geolocation": "25.812218,-80.19258",
+    "phone": "(305) 297-7831",
+    "community": "Design District",
+    "website": "www.piaget.com"
+  },
+  {
+    "name": "Prada",
+    "address": "180 NE 40th Street Miami, Florida 33137",
+    "geolocation": "25.81345,-80.191779",
+    "phone": "(305) 438-2280",
+    "community": "Design District",
+    "website": "www.prada.com/"
+  },
+  {
+    "name": "Rolex Boutique",
+    "address": "135 NE 39th Street Miami, Florida 33137",
+    "geolocation": "25.812944,-80.192734",
+    "phone": "(305) 576-5391",
+    "community": "Design District",
+    "website": "www.rolex.com"
+  },
+  {
+    "name": "Tiffany & Co.",
+    "address": "114 NE 39th St Miami, Florida 33137",
+    "geolocation": "25.812731,-80.193056",
+    "phone": "(305) 428-1390",
+    "community": "Design District",
+    "website": "www.tiffany.com"
+  },
+  {
+    "name": "Tom Ford",
+    "address": "103 NE 39th Street Miami, Florida 33137",
+    "geolocation": "25.812754,-80.193342",
+    "phone": "(786) 749-2600",
+    "community": "Design District",
+    "website": "www.tomford.com"
+  },
+  {
+    "name": "Valentino",
+    "address": "140 NE 39th Street Miami, Florida 33137",
+    "geolocation": "25.812218,-80.19258",
+    "phone": "(305) 639-8851",
+    "community": "Design District",
+    "website": "www.valentino.com"
+  },
+  {
+    "name": "Versace",
+    "address": "186 NE 39th Street Units 116 & 216 Miami, Florida 33137",
+    "geolocation": "25.81268,-80.194684",
+    "phone": "(305) 573-8345",
+    "community": "Design District",
+    "website": "www.us.versace.com/"
+  },
+  {
+    "name": "Bayside Marketplace",
+    "address": "401 Biscayne Blvd, Miami, FL 33132",
+    "geolocation": "25.777355,-80.185572",
+    "phone": "(305) 381-8972",
+    "community": "Downtown Miami",
+    "website": "http://www.baysidemarketplace.com"
+  }
+]
