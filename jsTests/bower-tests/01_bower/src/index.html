@@ -281,12 +281,14 @@
 //      }
 //    }
 
-    interactiveMap.makeMap({
+
+    var m = new InteractiveMap({
       map: {
         div: '#map-canvas'
       },
       directoryDiv: '#locations'
     });
+    //m.makeMap();
 
     $('.legend a').on('click', function (e) {
       e.preventDefault();
@@ -295,14 +297,19 @@
       if (!$this.hasClass('active')) {
         $('.legend a').removeClass('active');
         $this.addClass('active');
-        interactiveMap.removeMarkers();
-        interactiveMap.addMarkers('../json/' + $this.attr('data-file') + '.json');
+        m.removeMarkers();
+        m.addMarkers('../json/' + $this.attr('data-file') + '.json');
       } else {
         $this.removeClass('active');
-        interactiveMap.removeMarkers();
+        m.removeMarkers();
       }
 
     });
+
+//    $('.locations').on('click', '.loc', function(e){
+//      console.log('ID : ' + $(this).attr('id'));
+//      console.log('Scroll Top  : ' + $(this).attr('data-scroll-top'));
+//    });
 
 
 //    var map = new GMaps({

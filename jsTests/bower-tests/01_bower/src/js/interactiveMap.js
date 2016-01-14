@@ -1,11 +1,13 @@
-var interactiveMap = (function () {
+var InteractiveMap = (function (options) {
+console.log( 'started maybe i should call init')
 
   var _config = {
     map: {
       div: '#map',
       lat: 25.798305,
       lng: -80.185966,
-      zoom: 12
+      zoom: 12,
+      styles : [{"featureType":"water","stylers":[{"color":"#4eab9a"}]},{"featureType":"landscape","stylers":[{"color":"#fef4d0"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#e0d6b5"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#e99d47"},{"visibility":"simplified"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]}]
     },
     buttonContainer: '.legend'
   };
@@ -24,7 +26,7 @@ var interactiveMap = (function () {
   function init(options) {
     _config = _.merge(_config, options);
 
-
+    console.log('what', _config.map );
     $locationArea = $(_config.directoryDiv);
     map = new GMaps(_config.map);
   }
@@ -66,12 +68,31 @@ var interactiveMap = (function () {
       });
       addToDirectory(desc, i);
       allMarkers.push(singleMarker);
+      resetMap();
+    });
+
+
+    $locationArea.on('click', '.loc', function(e){
+      console.log('id' + $(this).attr('id'));
+      console.log('top' + $(this).attr('data-scroll-top'));
+      console.log('map index : ', map.markers[$(this).attr('id')]);
+
+      var $index = $(this).attr('id');
+
+      position = map.markers[$index].getPosition();
+
+      lat = position.lat();
+      lng = position.lng();
+
+      map.setCenter(lat, lng);
+      map.setZoom(15);
+
     });
 
   }
 
   function updateDirectory( marker, i) {
-    console.log(marker);
+    //console.log(marker);
     $locationArea.children().removeClass('map-active');
     var $newLoc = $('#'+marker.index );
     $newLoc.addClass('map-active');
@@ -91,9 +112,12 @@ var interactiveMap = (function () {
     newDesc += '</div>';
     $locationArea.append(newDesc);
 
+
+
+
     var id = $('#' + i),
       topping = (id.offset().top - 115);
-    console.log('toppong : ' +  (id.offset().top - 115));
+    //console.log('toppong : ' +  (id.offset().top - 115));
 
     id.attr('data-scroll-top', topping);
 
@@ -106,6 +130,14 @@ var interactiveMap = (function () {
     //resetMap();
   }
 
+  function resetMap(){
+    map.setZoom(12);
+    console.log(_config.map);
+    console.log(options.map.lat, options.map.lng);
+    //lat: ,
+    //    lng: -80.185966,
+    map.setCenter(25.798305, -80.185966 )
+  }
 
   function removeMarkers() {
     map.removeMarkers();
@@ -113,9 +145,13 @@ var interactiveMap = (function () {
     allMarkers = [];
   }
 
+
+
+  init( options );
+
   return {
     makeMap: init,
     addMarkers: loadFile,
     removeMarkers: removeMarkers
   }
-})();
+});
