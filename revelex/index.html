@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation-flex.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="row content"></div>
+<p> Your Total is : $<span class="total"></span></p>
+
+<script id="entry-template" type="text/x-handlebars-template">
+  {{#each this}}
+  <div class="small-12 medium-4 columns">
+    <article class="card" data-cruiseId="{{sailing_cruise_line_id}}" data-sailingId="{{sailing_cruise_line_id}}">
+      <div class="card__graphic">
+        <p class="card__price">
+          <small>Starting At</small>
+          ${{#lowestPrice sailing_options}} {{price}} {{/lowestPrice}}
+        </p>
+        <img class="card__img" src="{{sailing_main_image}}" alt="{{sailing_name}}">
+      </div><!-- /card__img -->
+      <div class="card__info">
+        <p class="card__desc">{{cruise_line_name}} - Ship Name {{cruise_ship_name}}</p>
+        <h1 class="card__title">{{sailing_name}}</h1>
+        <form class="card__form card__form--radio">
+          {{#each sailing_options}}
+          <label for="option-{{@index}}-{{../sailing_cruise_line_id}}" class="form__label form__label--radio">
+            <input data-cruise-cost="{{sailing_price}}" type="radio"
+                   id="option-{{@index}}-{{../sailing_cruise_line_id}}" name="sailingid-{{../sailing_cruise_line_id}}"
+                   class="form__input form__input--radio" {{#setChecked ../sailing_options}} {{sailing_price}}
+            {{/setChecked}}>
+            <span class="card__date">{{sailing_date}}</span>
+            <span class="card__cost">${{sailing_price}}</span>
+          </label>
+          {{/each}}
+        </form>
+      </div><!-- /card__info -->
+    </article><!-- /card -->
+  </div>
+  {{/each}}
+</script>
+
+<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
